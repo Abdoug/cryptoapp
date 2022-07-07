@@ -6,6 +6,7 @@
    --pink: #0071bd;
    --light-blue: #e6f7ff;
    --border: #d9d9d9;
+   --primary-color: #faad14;
 }
 
 * {
@@ -25,7 +26,8 @@ a:hover{
 
 .navbar{
     flex: 0.2;
-    background-color: rgb(0, 21, 41);
+    background-color: var(--primary-color);
+    /* rgb(0, 21, 41) */
 }
 
 .main {
@@ -42,12 +44,16 @@ a:hover{
     margin: 10px;
     height: 100vh;
     margin: 0px;
-    background-color: rgb(0, 21, 41);
+    background-color: var(--primary-color);
+    /* rgb(0, 21, 41) */
     max-width: 250px;
 }
-
+.nav-container .ant-menu {
+    background-color: var(--primary-color) !important;
+}
 .logo-container{
-    background-color: #001529;
+    background-color: var(--primary-color);
+    /* #001529 */
     display: flex;
     padding: 20px;
     align-items: center;
@@ -115,7 +121,8 @@ a:hover{
         height: 8vh;
         position:fixed;
         z-index: 100;
-        background-color: var(--bgSecondary);
+        background-color: var(--primary-color);
+        /* var(--bgSecondary) */
         max-width: 100vw;
     }
   
@@ -129,13 +136,30 @@ a:hover{
 
     .ant-menu{
         position: absolute;
-        right: 0px;
+        margin-top: 5rem !important;
     }
     .home-title{
         font-size: 1.4rem !important;
     }
     .show-more{
         font-size: 1.3rem !important;
+    }
+    main {
+        padding: 0 !important;
+    }
+    .news-title {
+        width: 100% !important;
+    }
+    .menu-control-container {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    .ant-layout-header {
+        background-color: transparent !important;
+    }
+    .menu-control-container {
+        background-color: #001529 !important;
     }
 }
 
@@ -376,7 +400,8 @@ width: 70%;
 }
 
 .footer {
-    background-color: #001529;
+    background-color: var(--primary-color);
+    /* #001529 */
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -387,4 +412,8 @@ width: 70%;
     width: 100%;
     text-align: center;
     height: 10%;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:first-child:hover {
+    background-color: #001529 !important;
 }

@@ -27,42 +27,67 @@ const Navbar = () => {
     }, [screenSize]);
 
     const items = [
-        {
-            label: (
-                <Link to="/">Home</Link>
-            ),
-            key: 'home',
-            icon: <HomeOutlined />,
-        },
-        {
+      {
           label: (
-            <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+              <Link to="/">Consulting Crypto App</Link>
           ),
-          key: 'cryptocurrencies',
-          icon: <FundOutlined />,
-        },
-        {
-            label: (
-                <Link to="/exchanges">Exchanges</Link>
-            ),
-            key: 'exchanges',
-            icon: <MoneyCollectOutlined />,
-        },
-        {
-            label: (
-              <Link to="/news">News</Link>
-            ),
-            key: 'news',
-            icon: <BulbOutlined />,
-        },
-      ];
+          key: 'd',
+          icon: <Avatar src={CryptoCurrencyIcon} size="medium"/>,
+      },
+      {
+          label: (
+              <Link to="/">Home</Link>
+          ),
+          key: 'home',
+          icon: <HomeOutlined />,
+      },
+      {
+        label: (
+          <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+        ),
+        key: 'cryptocurrencies',
+        icon: <FundOutlined />,
+      },
+      {
+          label: (
+              <Link to="/exchanges">Exchanges</Link>
+          ),
+          key: 'exchanges',
+          icon: <MoneyCollectOutlined />,
+      },
+      {
+          label: (
+            <Link to="/news">News</Link>
+          ),
+          key: 'news',
+          icon: <BulbOutlined />,
+      },
+    ];
 
+  return (
+    <>
+        <div className="logo" />
+        <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined style={{color: "white"}}/></Button>
+        {screenSize <= 800 && activeMenu ? <Menu
+          theme="dark"
+          mode="vertical"
+          defaultSelectedKeys={['0']}
+          items={items}
+        /> : (screenSize > 800 && <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={['0']}
+          items={items}
+         
+        />)}
+    </>
+  )
   return (
     <div className='nav-container'>
         <div className='logo-container'>
             <Avatar src={CryptoCurrencyIcon} size="large"/>
             <Typography.Title level={2} className="logo">
-                <Link to="/">Sample Crypto App</Link>
+                <Link to="/">Consulting Crypto App</Link>
             </Typography.Title>
         </div>
         <div>

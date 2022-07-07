@@ -88,7 +88,7 @@ const Exchanges = () => {
         return true;
       });
     }
-    console.log(data?.data?.coins);
+
     setDataTable(dataTableToBeSet);
     setLoading(false)
   }, [data])
@@ -107,6 +107,10 @@ const Exchanges = () => {
       </Col>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <Table
+          style={{
+            width: '100%',
+            overflowX: 'scroll'
+          }}
           columns={columns}
           expandable={{
             expandedRowRender: (record) => (

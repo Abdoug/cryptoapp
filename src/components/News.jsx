@@ -40,8 +40,18 @@ const News = ({ simplified }) => {
           <Card hoverable className='news-card'>
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className='news-image-container'>
-                <Title className='news-title' level={4}>{news.name}</Title>
-                <img src={news?.image?.thumbnail?.contentUrl || demoImg} alt="news" style={{maxWidth: '200px', maxHeight: '100px'}}/>
+                <Row>
+                  <Col md={24} lg={18}>
+                    <Title className='news-title' level={4}>{news.name}</Title>
+                  </Col>
+                  <Col md={24} lg={6} style={{
+                        textAlign: 'end',
+                        display: 'flex',
+                        justifyContent: 'end',
+                  }}>
+                    <img src={news?.image?.thumbnail?.contentUrl || demoImg} alt="news" style={{maxWidth: '200px', maxHeight: '100px'}}/>
+                  </Col>
+                </Row>
               </div>
               <p>
                 {news.description.length > 100 ?
